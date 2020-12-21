@@ -1,14 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import {data} from './books'
+import SpecificBook from './Book'
+import {greeting} from './testing/testing'
+
 function App() {
+  console.log(greeting);
   return (
-    <div>
-      <h1>Rakshith kumar s</h1>
-      <h1>Rakshith kumar s</h1>
-      <h1>Rakshith kumar s</h1>
-      <h1>Rakshith kumar s</h1>
-    </div>
+    <section className='booklist'>
+      {data.map((book, index) => {
+        return <SpecificBook key={book.id} {...book}></SpecificBook>;
+      })}
+    </section>
     
   );
 }
